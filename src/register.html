@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- local css -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://kit.fontawesome.com/75cea1a872.js" crossorigin="anonymous"></script>
+    <!-- Specific  -->
+    <style>
+    .bg-page {
+        background-image: url('images/login_background.png'); 
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    </style>
+</head>
+<body class="bg-page min-h-screen flex flex-col">
+    <!-- navigation bar content -->
+    <nav class="flex items-center justify-between p-4 bg-white bg-opacity-75" style="background-color: #FAFAFA;">
+        <div class="flex items-center">
+            <img src="images/logo.png" alt="DayBreak Cafe Logo" class="h-10 w-50">
+        </div>
+        <div class="space-x-4 text-brown-700">
+            <!-- list buttons -->
+            <a href="Products.html" class="nav-link hover:underline hover-highlight px-2 py-1">Products</a>
+            <!-- Signup button -->
+            <a href="login.html">
+            <button class="btn-default overflow-hidden relative w-40 bg-stone-50 text-gray-900 py-1 px-2 rounded-xl font-bold transition-all duration-100 hover:shadow-md border border-stone-100 hover:bg-gradient-to-t hover:from-stone-100 before:to-stone-50 hover:-translate-y-[3px]" style="color: #512615; border-color: #512615; border-width: 3px; border-radius: 20px;">
+                <span class="relative">Login</span>
+            </button>
+            </a>
+        </div>
+    </nav>
+
+    <div class="flex-grow flex items-center justify-center">
+        <div class="bg-white p-8 rounded-3xl shadow-md">
+            <div class="mb-4">
+            </div>
+
+            <!-- username -->
+            <div class="mb-4 relative font-roboto">
+                <i class="fas fa-user absolute top-1/2 left-3 transform -translate-y-1/2 text-gray-500"></i>
+                <input id="username" type="text" placeholder="Username" class="flex items-center w-full px-10 py-2 bg-yellow-300 rounded-full text-white placeholder-white" style="background-color: #E5C570; color: #ffffff;">
+            </div>
+
+            <!-- branch name -->
+            <div class="mb-4 relative font-roboto">
+                <i class="fa-solid fa-store absolute top-1/2 left-3 transform -translate-y-1/2 text-gray-500"></i>
+                <input id="branchname" type="text" placeholder="Branch Name" class="flex items-center w-full px-10 py-2 bg-yellow-300 rounded-full text-white placeholder-white" style="background-color: #E5C570; color: #ffffff;">
+            </div>
+
+            <!-- Franchisee's Name -->
+            <div class="mb-4 relative font-roboto">
+                <i class="fa-solid fa-person absolute top-1/2 left-3 transform -translate-y-1/2 text-gray-500"></i>
+                <input id="franchisee" type="text" placeholder="Franchisee's Name" class="flex items-center w-full px-10 py-2 bg-yellow-300 rounded-full text-white placeholder-white" style="background-color: #E5C570; color: #ffffff;">
+            </div>
+
+            <!-- Branch Location -->
+            <div class="mb-4 relative font-roboto">
+                <i class="fa-solid fa-location-dot absolute top-1/2 left-3 transform -translate-y-1/2 text-gray-500"></i>
+                <input id="branchlocation" type="text" placeholder="Branch Location" class="flex items-center w-full px-10 py-2 bg-yellow-300 rounded-full text-white placeholder-white" style="background-color: #E5C570; color: #ffffff;">
+            </div>
+
+            <!-- password -->
+            <div class="mb-4 relative font-roboto">
+                <i class="fa-solid fa-key absolute top-1/2 left-3 transform -translate-y-1/2 text-gray-500"></i>
+                <input id="password" type="password" placeholder="Password" class="flex items-center w-full px-10 py-2 bg-yellow-300 rounded-full text-white placeholder-white" style="background-color: #E5C570; color: #ffffff;">
+            </div>
+
+            <!-- confirm password -->
+            <div class="mb-4 relative font-roboto">
+                <i class="fa-solid fa-key absolute top-1/2 left-3 transform -translate-y-1/2 text-gray-500"></i>
+                <input id="confirmpassword" type="password" placeholder="Confirm Password" class="flex items-center w-full px-10 py-2 bg-yellow-300 rounded-full text-white placeholder-white" style="background-color: #E5C570; color: #ffffff;">
+            </div>
+
+            <div class="mb-4">
+                <button class="w-full px-4 py-2 bg-gray-800 rounded-full text-white" style="background-color: #512615;" onclick="checkCredentials()">Register</button>
+            </div>
+            <div class="flex justify-between text-sm text-brown-700">
+                <a href="login.html" class="hover:underline">Already have account?</a>
+                <a href="#" class="hover:underline">Need Help?</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- javascript -->
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="fns.js"></script>
+    <!-- dedicated -->
+    <script>
+    function checkCredentials(){
+        // retreive credentials from DOM
+        const username = document.getElementById('username').value;
+        const branchname = document.getElementById('branchname').value;
+        const franchisee = document.getElementById('franchisee').value;
+        const branchlocation = document.getElementById('branchlocation').value;
+        const password = document.getElementById('password').value;
+        const confirmpassword = document.getElementById('confirmpassword').value;
+
+        console.log(username);
+
+        // filter the credentials
+        if(username == '' || branchname == '' || franchisee == '' || branchlocation == '' || password == '' || confirmpassword == ''){
+            errorAlert('Please input all fields.');
+            return;
+        }
+    }
+    </script>
+</body>
+</html>

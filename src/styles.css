@@ -1,0 +1,37 @@
+
+/* For login form and register form */
+::placeholder {
+    color: #ffffff;
+}
+
+/* button highlight */
+.active-highlight {
+    color: #E5C570;
+    text-decoration: underline;
+}
+
+/* custom button for  */
+.btn-custom {
+    background-color: #512615;
+    width: 100%;
+}
+
+/* disable scroll for chrome */
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* Alert */
+.my-confirm-button {
+    background-color: #512615; /* Background color */
+    color: white; /* Text color */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer; /* Pointer cursor */
+  }
+  
+  .my-confirm-button:hover {
+    background-color: #E5C570; /* Hover background color */
+  }
